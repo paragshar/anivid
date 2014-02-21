@@ -2,6 +2,7 @@ var assert = require('assert')
   , Sails = require('sails')
   , barrels = require('barrels')
   , fixtures;
+var request = require('supertest');
 
 // Global before hook
 before(function (done) {
@@ -25,34 +26,19 @@ before(function (done) {
   });
 });
 
-// Global after hook
-after(function (done) {
-  console.log();
-  sails.lower(done);
-});
 
-// Here goes a module test
-describe('Users', function() {
+
+/*describe('Users', function() {
   describe('#list()', function() {
     it ('Atleast one user is present', function() {
-      // All apples
       User.find(function(err, users) {
         console.log(users.length);
         var numberOfUsers = users.length > 0;
         assert(numberOfUsers, 'There should be some users');
-        /*var gotApples = (fixtures['users'].length > 0);
-        var applesAreInTheDb = (users.length === fixtures['users'].length);
-        assert(gotApples&&applesAreInTheDb, 'There must be something!');*/
-
-        // All oranges
-        /*Oranges.find(function(err, oranges) {
-          assert.equal(apples.length, oranges.length,
-            'The amount of varieties of apples and oranges should be equal!');
-        });*/ 
       });
     });
   });
-});
+});*/
 
 
 
@@ -63,4 +49,49 @@ describe('BasicUser', function(done) {
       done();
     });
   });
+});
+
+
+describe('Routes', function(done) {
+  it('GET / should return 200', function (done) {
+    request(Sails.express.app).get('/').expect(200, done);
+  });
+});
+
+describe('Routes', function(done) {
+  it('GET /home should return 302', function (done) {
+    request(Sails.express.app).get('/home').expect(302, done);
+  });
+});
+
+describe('Routes', function(done) {
+  it('GET /signup should return 200', function (done) {
+    request(Sails.express.app).get('/signup').expect(200, done);
+  });
+});
+
+
+describe('Routes', function(done) {
+  it('GET /processSignup should return 200', function (done) {
+    request(Sails.express.app).get('/').expect(200, done);
+  });
+});
+
+
+describe('Routes', function(done) {
+  it('GET /login should return 200', function (done) {
+    request(Sails.express.app).get('/login').expect(200, done);
+  });
+});
+
+describe('Routes', function(done) {
+  it('GET /processLogin should return 302', function (done) {
+    request(Sails.express.app).get('/processLogin').expect(302, done);
+  });
+});
+
+// Global after hook
+after(function (done) {
+  console.log();
+  sails.lower(done);
 });
