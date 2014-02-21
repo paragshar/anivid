@@ -13,7 +13,8 @@
         "passport-local": "*",
         "bcrypt": "*",
         "mocha": "*",
-        "should": "*"
+        "should": "*",
+        "supertest": "*"
     },
       "devDependencies": {
         "mocha": "~1.17.1",
