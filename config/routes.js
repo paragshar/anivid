@@ -54,6 +54,10 @@ module.exports.routes = {
   '/processLogin': {
     controller: 'UserController',
     action: 'processLogin'
+  },
+  '/user/verifyEmail/:token': {
+    controller: 'UserController',
+    action: 'emailVerified'
   }
 
   /*

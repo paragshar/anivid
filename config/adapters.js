@@ -16,7 +16,10 @@ module.exports.adapters = {
 
   // If you leave the adapter config unspecified 
   // in a model definition, 'default' will be used.
-  'default': 'disk',
+  
+ 'default': 'mongoDB',
+
+ // 'default': 'disk',
 
   // Persistent adapter for DEVELOPMENT ONLY
   // (data is preserved when the server shuts down)
@@ -24,6 +27,24 @@ module.exports.adapters = {
     module: 'sails-disk'
   },
 
+
+//Integration for MONGODB
+ mongoDB: {
+
+    module   : 'sails-mongo',
+    host     : 'localhost',
+    port     : 27017,
+    user     : null,
+    password : null,
+    database : 'anividDB'
+
+   /* module: 'sails-mongo',
+    url: 'mongodb://localhost:27017/anividDB'*/
+    
+
+    /*mongodb://localhost:27017/optdash
+    url: 'mongodb://USER:PASSWORD@HOST:PORT/DB'*/
+ },
   // MySQL is the world's most popular relational database.
   // Learn more: http://en.wikipedia.org/wiki/MySQL
   myLocalMySQLDatabase: {

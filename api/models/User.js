@@ -12,7 +12,12 @@ module.exports = {
   attributes: {
   	username: 'string',
   	email: 'string',
-  	password: 'string'
+  	password: 'string',
+    emailVerified: {
+      type: 'string',
+      defaultsTo: 'false'
+    },
+    token: "string"
   },
 
   beforeCreate: function(user, cb) {

@@ -16,6 +16,7 @@
  */
 var passport = require('passport'),
 LocalStrategy = require('passport-local').Strategy;
+var address = 'http://localhost:1337/user/verifyEmail/';
 
 module.exports = {
     
@@ -32,8 +33,9 @@ module.exports = {
    login: function(req, res){
    		res.view('auth/login');
    },
-   processLogin: function(req, res){
-	    passport.authenticate('local', function(err, user, info) {
+
+   processLogin: function(req, res){    
+      passport.authenticate('local', function(err, user, info) {
 	      if ((err) || (!user)) {
 	        /*return res.send({
 	        message: 'login failed'
@@ -58,16 +60,50 @@ module.exports = {
    },
    
    processSignup: function(req, res){
-   		User.create(req.params.all()).done(function (err, user) {
-	        if ( err ) {
-	            return next(err);
-	        }
-	        else {
-	        	res.redirect('/home')
-	            //res.json(user);
-	        }
-    	});
-   }
+
+      generateRandomAlphaNumeric(60, function(randomToken){
+        
+        var link = address+randomToken
+        console.log("randomToken: "+randomToken);
+        EmailService.sendInviteEmail({email: req.body.email, name: req.body.username, link: link});
+
+        User.create({
+          username: req.body.username,
+          email: req.body.email,
+          password: req.body.password,
+          token: randomToken
+          }).done(function (err, user) {
+            if ( err ) {
+                return next(err);
+            }
+            else {
+              res.redirect('/home')
+                //res.json(user);
+            }
+        });  
+      });
+   },
+
+   // For example, to update a user's name,
+// .update(query, params to change, callback)
+
+  emailVerified: function(req, res){
+
+    console.log("req.param('token'): "+req.param('token'));
+    User.update({
+      token: req.param('token')
+    },{
+      emailVerified: true
+    }, function(err, users) {
+      if (err) {
+        return console.log(err);
+      } else {
+        console.log("Email verified for user:", users);
+        res.view('email/emailVerified');
+      }
+    });
+  }
+    
 
   /**
    * Overrides for the settings in `config/controllers.js`
@@ -95,4 +131,16 @@ module.exports.blueprints = {
   // (useful for prototyping)
   shortcuts: true
  
+};
+
+
+
+var generateRandomAlphaNumeric = function(length, callback){
+    var chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+    var randomString='';
+    for(var i=0; i<length; i++){
+      var rnum = Math.floor(Math.random() * chars.length);
+      randomString = randomString+chars.substring(rnum,rnum+1);
+    }
+    callback(randomString);
 };
