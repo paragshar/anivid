@@ -32,32 +32,51 @@ module.exports.routes = {
   // located at `views/home/index.ejs`
   // 
   // (This would also work if you had a file at: `/views/home.ejs`)
-  '/': {
+  /*'/': {
     view: 'home/index'
+  },*/
+  '/' : {
+    controller : 'home'
   },
-  '/home': {
-      controller: 'UserController',
-      action: 'home'
-  },
-  '/signup': {
-     controller: 'UserController',
+  'get /auth/signup': {
+     controller: 'auth',
      action: 'signup'
   },
-  '/processSignup': {
-    controller: 'UserController',
+  'post /auth/signup': {
+    controller: 'auth',
     action: 'processSignup'
   },
-  '/login': {
-    controller: 'UserController',
+  'get /auth/login': {
+    controller: 'auth',
     action: 'login'
   },
-  '/processLogin': {
-    controller: 'UserController',
+  'post /auth/login': {
+    controller: 'auth',
     action: 'processLogin'
   },
   '/user/verifyEmail/:token': {
-    controller: 'UserController',
+    controller: 'auth',
     action: 'emailVerified'
+  },
+  '/auth/facebook': {
+    controller: 'auth',
+    action: 'facebook'
+  },
+  '/auth/facebook/callback': {
+    controller: 'auth',
+    action: 'facebook/callback'
+  },
+  '/auth/google': {
+    controller: 'auth',
+    action: 'google'
+  },
+  '/auth/google/callback': {
+    controller: 'auth',
+    action: 'google/callback'
+  },
+  'get /auth/logout': {
+    controller: 'auth',
+    action: 'logout'
   }
 
   /*

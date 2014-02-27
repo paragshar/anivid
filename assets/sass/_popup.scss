@@ -1,0 +1,123 @@
+
+/*------- popup styles -------*/
+
+.login-popup{
+
+	overflow: hidden;
+	position: absolute;
+	z-index: 999999;
+	margin:0 auto;
+	display:none;
+	background: white;
+	top:30%;	
+	left:0;
+	right:0;
+	margin:0 auto;
+	width:35%;
+	@include rounded(5px);
+	@include box-shadow;
+
+	.close-button{
+		float:right;
+		margin:10px 10px 0px 0px;
+		background:url('../img/close-button.png') center transparent no-repeat;
+		height:20px;
+		width:20px;
+		&:hover{
+			cursor:pointer;
+		}
+	}
+
+	.form-heading{
+		margin: 30px 0px 15px 0px;
+		h1{
+			color:#000;
+			font-weight:bold;
+			font-size:24px;
+			span{
+				color:$heading-color;
+				padding:0px 5px;
+			}
+		}
+	}
+
+	.login-form{
+		text-align:left;
+		margin:0 20px 0 20px;
+		
+		.input-field{
+			font-size:20px;
+			color:$text-color;
+			padding:10px 0 20px 0;
+			
+			// label{
+			// 	padding:10px 0;
+			// }
+
+			.input-box{
+				border:1px solid #ccc;
+				background:#f9f9f9;
+				@include rounded(4px);
+
+				input{
+					width:95%;
+					margin:0 auto;
+					padding:5px 10px;
+					line-height:25px;
+					border:none;
+					outline:none;
+					font-size:25px;
+					color:$text-color;
+					background:#f9f9f9;
+				}
+			}
+		}
+
+		.login-button{
+			
+			overflow:hidden;
+
+			.login{
+				float:right;
+
+				.submit-btn{
+					display:inline-block;
+					vertical-align:middle;
+					font-size:18px;
+					font-style:bariol_regular;
+					margin-right:15px;
+					button{
+						border:none;
+						outline:none;					
+					}
+				}
+			
+				.forgot-pwd{
+					display:inline-block;
+					vertical-align:middle;
+					a{
+						color:$heading-color;
+						font-size:18px;
+						margin-right:20px;
+					}
+				}
+			}
+		}
+	}
+}
+
+.span-red{
+	color:$heading-color; 
+}
+
+
+.social-login-buttons{
+
+	.social-button-fb{
+		background:url('../img/fb-button.png') no-repeat;
+		outline:none;
+		border:none;
+		height:20px;
+	
+	}
+}

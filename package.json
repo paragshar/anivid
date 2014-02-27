@@ -16,7 +16,9 @@
         "should": "*",
         "supertest": "*",
         "sails-mongo": "0.9.4",
-        "nodemailer": "*"
+        "nodemailer": "*",
+        "passport-facebook": "~1.0.2",
+        "passport-google-oauth": "0.1.5"
     },
       "devDependencies": {
         "mocha": "~1.17.1",

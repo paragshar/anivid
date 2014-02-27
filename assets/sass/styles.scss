@@ -1,0 +1,749 @@
+@import "compass/css3";
+
+@import 'base';
+@import 'fonts';
+@import 'mixins1';
+@import 'variables';
+
+@import 'header';
+
+@import 'your_video';
+
+@import 'footer';
+
+@import 'popup';
+
+/* Buttons that are used in general */
+
+.btn-primary{
+  	display: inline-block;
+  	padding: 0 20px;
+	background-color: #f25b5a;
+	color:white;
+	@include rounded(3px);
+	@include btn(#f25b5a,#f28281);
+}
+
+.btn-secondary{
+  	display: inline-block;
+  	padding: 0 15px;
+	background-color: #75201f;
+	@include rounded(3px);
+	@include btn(#75201f,#a45a59);
+
+}
+
+
+.fb-button{
+  	display: inline-block;
+  	padding: 0 15px;
+	background-color: #75201f;
+	@include rounded(3px);
+}
+
+.g-plus-button{
+
+}
+
+/*------- banner BG -------*/
+
+.banner-bg{
+	background:url("../img/banner.png");	
+	height:440px;
+	.banner{
+		position:relative;
+		h1{
+			margin:20px 0 0 0;
+			vertical-align:middle;
+			display:inline-block;
+			color:white;
+			font-size:30px;
+			font-family:bariol_bold;
+		}
+		
+		h2{
+			font-size:24px;
+			margin:10px 0 0 0;
+			color:white;
+			font-style:normal;
+		}
+
+		.banner-play-button{
+			position:absolute;
+			background:url('../img/banner-play-button.png');
+			background-repeat: no-repeat;
+			@include divSize(100px,100px);
+			left:45%;
+			top:210%;
+
+			&:hover{
+				position:absolute;
+				background:url('../img/banner-play-button-hover.png');
+				background-repeat: no-repeat;
+			}
+		}
+		.char1{
+			position:absolute;
+			background:url('../img/character1.png');
+			background-repeat: no-repeat;
+			height:210px;
+			width:100px;
+			left:9%;
+			top:145%;			
+		}
+		.char2{
+			position:absolute;
+			background:url('../img/character2.png');
+			background-repeat: no-repeat;
+			@include divSize(260px,150px);
+			left:25%;
+			top:165%;			
+		}
+		.char3{
+			position:absolute;
+			background:url('../img/character3.png');
+			background-repeat: no-repeat;
+			@include divSize(260px,150px);
+			left:55%;
+			top:165%;			
+		}
+
+		.char4{
+			position:absolute;
+			background:url('../img/character4.png');
+			background-repeat: no-repeat;
+			@include divSize(210px,100px);
+			left:78%;
+			top:145%;			
+		}
+
+		.btn{
+			position:absolute;
+			width:150px;
+			left:42.5%;
+			top:370%;			
+			a{
+				padding:7px 30px;
+			}
+		}
+
+	}
+}
+
+
+/*-------------diagonal texture -------*/
+
+.diagonal-texture{
+	@include lineTexture;
+	
+	h1{
+		@include heading-title;
+	}
+
+	.great-videos-info{
+		ul{
+			overflow:hidden;
+			li{
+				float:left;
+				/* divSize($height, $width)*/
+				@include divSize(250px,280px); 
+				margin: 0 0 0 50px;
+				padding-top:30px;
+				.screen{
+					background-image:url('../img/sprites.png');
+					background-position: 0px -600px;
+					margin:0 auto;
+					@include divSize(65px,80px); 
+				}
+				.rocket{
+					background-image:url('../img/sprites.png');
+					background-position: -100px -600px;
+					margin:0 auto;
+					@include divSize(65px,80px); 
+				}
+				.picture{
+					background-image:url('../img/sprites.png');
+					background-position: -200px -600px;
+					margin:0 auto;
+					@include divSize(65px,80px); 
+				}
+
+				h2{
+					height:50px;
+					font-size:18px;
+					margin:20px;
+					color:$text-color;
+					font-weight:bold;
+				}
+
+			}
+		}
+	}
+}
+
+
+
+/*------- video-data -------*/
+
+.video-data{
+	height:1000px;
+	@include lineTexture;
+
+	.animated-video{
+
+		h1{
+			@include heading-title;
+			padding-bottom:60px;
+		}
+
+		.mac{
+			margin:0 auto;
+			position:relative;
+			left:7%;
+
+			.thumblin-diversity{
+				height : 250px;
+				width : 250px;
+				position: absolute;
+				left:-10%;
+				top:3%;			
+			}
+			
+			.thumblin-laws{
+				height : 250px;
+				width : 250px;
+				position: absolute;
+				left:29%;
+				top:-10%;			
+			}
+
+			.thumblin-ideas{
+				height : 250px;
+				width : 250px;
+				position: absolute;
+				left:61%;
+				top:2%;
+			}
+
+			.thumblin-explore{
+				height : 250px;
+				width : 250px;
+				position: absolute;
+				left:-10%;
+				top:68%;
+			}
+			
+			.thumblin-thoughts{
+				height : 250px;
+				width : 250px;
+				position: absolute;
+				left:30%;
+				top:90%;
+			}
+			
+			.thumblin-strike{
+				height : 250px;
+				width : 250px;
+				position: absolute;
+				left:61%;
+				top:75%;
+			}
+		}
+	}
+}
+
+
+.thumblin-diversity{
+	.thumblin-text{
+		h2{
+			@include sub-heading;
+			padding:10px 0 0 30px;
+		}
+		p{
+			color:$text-color;
+			padding-left:30px;
+			padding-top:10px;
+			line-height:20px;
+			text-align:left;
+			word-spacing:5px;
+		}
+	}
+}
+
+.thumblin-laws{
+	.thumblin-text{
+		h2{
+			@include sub-heading;
+			padding:10px 0 0 30px;
+		}
+		p{
+			color:$text-color;
+			padding-left:30px;
+			padding-top:10px;
+			line-height:20px;
+			text-align:left;
+			word-spacing:5px;			
+		}
+	}
+}
+
+.thumblin-ideas{
+	.thumblin-text{
+		h2{
+			@include sub-heading;
+			padding:10px 0 0 30px;
+		}
+		p{
+			color:$text-color;
+			padding-left:30px;
+			padding-top:10px;
+			line-height:20px;
+			text-align:left;
+			word-spacing:5px;			
+		}
+	}
+}
+
+.thumblin-explore{
+	.thumblin-text{
+		h2{
+			@include sub-heading;
+			padding:10px 0 0 30px;
+		}
+		p{
+			color:$text-color;
+			padding-left:30px;
+			padding-top:10px;
+			line-height:20px;
+			text-align:left;
+			word-spacing:5px;			
+		}
+	}
+}
+
+.thumblin-thoughts{
+	.thumblin-text{
+		h2{
+			@include sub-heading;
+			padding:10px 0 0 30px;
+		}
+		p{
+			color:$text-color;
+			padding-left:30px;
+			padding-top:10px;
+			line-height:20px;
+			text-align:left;
+			word-spacing:5px;			
+		}
+	}
+}
+
+.thumblin-strike{
+	.thumblin-text{
+		h2{
+			@include sub-heading;
+			padding:10px 0 0 30px;
+		}
+		p{
+			color:$text-color;
+			padding-left:30px;
+			padding-top:10px;
+			line-height:20px;
+			text-align:left;
+			word-spacing:5px;			
+		}
+	}
+}
+
+
+
+
+/*------- sample video -------*/
+
+.sample-video-data{
+	background:#90dbd8;	
+	
+	h1{
+		@include heading-title;
+	}
+	
+	ul{
+		overflow:hidden;
+		li{
+			float:left;
+			@include divSize(170px,280px); 
+			margin: 50px 25px;
+			
+			.video{
+				position:relative;
+			
+				.video-imag{
+					position:absolute;
+				}	
+			
+				.play-button{
+				position:absolute;
+				background:url('../img/play-button.png');
+				background-repeat:no-repeat;
+				top:30%;
+				left:40%;
+				@include divSize(70px,70px);
+			
+				&:hover{
+					position:absolute;
+					background:url('../img/play-button-hover.png');
+					background-repeat:no-repeat;
+					top:30%;
+					left:40%;
+					@include divSize(70px,70px);
+				}
+			}
+
+			}
+		}
+	}
+}
+
+/*------- many-uses -------*/
+
+.many-uses{
+	background:url("../img/yellow-bg.png");
+	background-repeat:repeat-x repeat-y;
+
+	h1{
+		@include heading-title;
+	}
+	ul{
+		overflow:hidden;
+		li{
+			float:left;
+			@include divSize(170px,280px);
+			margin: 0 0 0 50px;
+
+			h2{
+				height:60px;
+				text-align:left;
+				font-size:18px;
+				color:$text-color;
+				font-weight:bold;
+			}
+			p{
+				text-align:left;			
+			}
+		}
+	}
+}
+
+
+/*------- Video Slider  -------*/
+
+.slider-video{
+	.slider{
+		margin:0 auto;
+		h1{
+			@include heading-title;
+		}
+		.slider-nav{
+			margin:20px;
+		}
+	}
+}
+
+
+/*------- Green Div for Sign Up and Price plan -------*/
+
+.plans-price{
+
+	background:#c9de74;
+	.green-div{
+		margin:0 auto;
+		
+		h2{
+			margin:25px 0px;
+			display : inline-block;
+			color:white;
+			font-size:24px;
+			font-weight:bolder;
+		}
+		
+		a{
+			margin : 0px 25px;
+		}
+	}
+}
+
+
+/*------- For Comercial Plans and Price Page -------*/
+.package-selection{
+	// height:auto;
+	// border : 1px solid #ccc;
+	overflow:hidden;
+
+	.title{
+		h1{
+			color:#1f1f1f;
+			font-size:30px;
+			font-weight:bold;
+			float:left;
+			margin:20px;
+		}
+		a{
+			float:right;
+			margin:30px 20px 0 0;
+			color:$link-color;
+			font-weight:bold;
+			font-size:18px;
+		}
+	}
+	.each-package{
+		float:right;
+		padding-right:20px;
+
+		$pack-color: #b9e4e2;
+		$title-font-size: 20px;
+		$text-font-size:22px;
+		$white:white;
+
+		.pack1{
+			background:$pack-color;
+			@include divSize(200px, 240px);
+			display: inline-block;
+		}
+
+		.pack2{
+			display: inline-block;
+			background:$pack-color;
+			@include divSize(200px, 240px);
+		}
+		.pack3{
+			display: inline-block;
+			background:#c9de74; // dark green div color
+			@include divSize(200px, 240px);
+		}
+
+		.pack1-bottom{
+			background:$pack-color;
+			display: inline-block;
+			width:240px;			
+			p{
+				font-size:14px;
+				color:#585858;
+				font-weight:bold;
+			}	
+		}
+		.pack2-bottom{
+			background:$pack-color;
+			display: inline-block;
+			width:240px;	
+			p{
+				font-size:14px;
+				color:#585858;
+				font-weight:bold;
+			}			
+		}
+		.pack3-bottom{
+			background:#c9de74;;
+			display: inline-block;
+			width:240px;	
+			p{
+				font-size:14px;
+				color:#585858;
+				font-weight:bold;
+			}			
+		}
+
+		h2{
+			padding-top:15px;
+			font-size:$title-font-size;
+			font-weight:bold;
+			color:$white;
+		}
+		p{
+			padding:15px;
+			font-size:$text-font-size;
+			font-weight:normal;
+			color:$white;
+		}
+		a{
+			margin:0 0 10px 0;
+		}
+
+		.price{
+			@include divSize(60px, 240px);
+			background:white;
+			padding-top:20px;	
+			span{
+				font-weight:bold;
+				color:#585858;
+				font-size:14px;
+			}
+		}
+	}
+}
+
+.package-details{
+	font-size:16px;
+	text-align:left;
+	padding:20px;
+	//font-weight:normal;
+	.package_select{
+		background:transparent url("../img/package-select.png") no-repeat center;
+	}
+	.package_select_none{
+		background:transparent url("../img/package-select-none.png") no-repeat center;
+	}
+}
+
+.details{
+	// border-collapse:collapse;
+	cellpadding:10px;
+	width:100%;
+	color:#565656;
+	// border:1px solid #000;
+	text-align:center;
+	line-height:40px;
+	
+	colgroup{
+		.first-col{
+			width:250px;
+			tr{
+				td{
+					text-align:left;				
+				}
+			}
+		}
+		.second-col {
+			width:240px;
+		}
+		.third-col {
+			width:240px;
+		}
+		.fourth-col {
+			width:240px;
+		}
+	}
+
+	tr.alt-color-even{
+		td{
+			background-color:#f6f6f6;
+		}
+	}
+
+	tr.alt-color-odd{
+		td{
+			background-color:#f9f9f9;
+		}
+	}
+}	
+
+/*------- Your videos -------*/
+
+// .grid{
+// 	.grid-heading{
+// 		border:1px solid #fff;
+// 		h1{
+// 			color:#1f1f1f;
+// 			font-size:26px;
+// 			font-weight:bold;
+// 			margin-left:20px;
+// 			text-align:left;
+// 		}
+// 	}
+// 	.grid-data{
+// 		overflow:hidden;
+// 		.grid-header{
+// 			margin:0 auto;
+// 			//width:100%;
+// 			margin-top:20px;
+// 			border-top:1px solid #ccc;
+// 			border-bottom:1px solid #ccc;
+			
+// 			.grid-header-cell{
+// 				width:200px;
+// 				display:inline-block;
+// 				vertical-align: middle;
+// 				padding:20px 0;
+
+// 				//font-size:
+// 			}
+
+// 			.video-title{
+// 				margin-left:200px;
+// 			}
+// 		}
+// 		.grid-body{
+// 			margin:0 auto;
+// 			width:100%;
+// 			.grid-body-cell{
+// 				width:200px;
+// 				display:inline-block;
+// 				vertical-align: middle;
+// 				padding:15px 0 15px 0;
+// 			}
+
+// 			.delete{
+// 				&:hover{
+// 					cursor:pointer;
+// 				}
+// 			}
+// 			.share{
+// 				// position:relative;
+	
+// 				&:hover{
+// 					cursor:pointer;		
+// 				}
+
+// 				.share-pop-up {
+// 					width:110px;
+// 					height:40px;
+// 					position: relative;
+// 					background: #ffffff;
+// 					@include rounded(5px);
+// 					border: 2px solid rgba(0,0,0,0.23);
+// 					img{
+// 						padding-top:3px;
+// 					}
+// 				}
+// 				.share-pop-up:after, .share-pop-up:before {
+// 					top: 100%;
+// 					left: 50%;
+// 					border: solid transparent;
+// 					content: " ";
+// 					height: 0;
+// 					width: 0;
+// 					position: absolute;
+// 					pointer-events: none;
+// 				}
+
+// 				.share-pop-up:after {
+// 					border-color: rgba(255, 255, 255, 0.23);
+// 					border-top-color: #ffffff;
+// 					border-width: 15px;
+// 					margin-left: -14px;
+// 				}
+// 				.share-pop-up:before {
+// 					border-color: rgba(255, 135, 219, 0);
+// 					border-top-color: rgba(0,0,0,0.23);;
+// 					border-width: 18px;
+// 					margin-left: -17px;
+// 				}
+// 			}
+
+// 			.grid-video{
+// 				position:relative;
+// 			}
+
+// 			.grid-play-button{
+// 				position:absolute;
+// 				height:45px;
+// 				width:45px;
+// 				left:40%;
+// 				top:30%;
+// 				background:url('../img/tiny-play-button.png') transparent center no-repeat;
+// 				&:hover{
+// 				background:url('../img/tiny-play-button-hover.png') transparent center no-repeat;					
+// 				}
+// 			}
+// 		}
+// 	}
+// }
