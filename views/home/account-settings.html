@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+	<meta charset="UTF-8">
+
+	<meta name="description" content="Creating Animation and Video.">
+
+	<meta name="viewport" content="width=device-width">
+
+	<title>ANIVID - Account Settings</title>
+
+	<link rel="stylesheet" href="css/styles.css">
+
+	<script src="js/jquery.min.js" type="text/javascript"></script>
+</head>
+
+<body>
+	
+	<div id = "wrapper">
+		
+		<div class = "container">
+			
+			<div class = "header">
+				
+				<div class = "header-left">
+				
+					<a href="index.html" title = "Logo"></a>&nbsp;&nbsp;<h1>ANIVID</h1>
+				
+				</div><!-- end header -->
+				
+				<div class = "header-right">
+					
+					<!-- <div class = "before-login">
+						<ul>
+							<li><a href="javascript:void()">Sign up</a></li>
+							
+							<li><a href="javascript:void()">Login</a></li>
+							
+							<li class ="drop-down-menu"><a  href="javascript:void()">Plans and Pricing <img src="img/dropdown.png" alt="Arrow"></a>
+								
+								<ul class = "dropdown">
+										<li><a href="javascript:void(0)">For Commercial use</a></li>
+										<li><a href="javascript:void(0)">For Personal use </a></li>
+								</ul>	
+
+							</li>
+						
+							<a href="javascript:void()" class ="btn-primary">START TRY</a>
+						
+						</ul>						
+
+					</div>	 -->
+					<!-- end before-login-->		
+
+					
+					<div class = "after-login">
+							<ul >
+								<li class = "drop-down-menu">
+									<a href = "javascript:void()" >Your Account 
+										<img src="img/dropdown.png" alt="Drop Down Arrow">
+									</a>
+									<ul class = "dropdown">
+										<li><a href="your-videos.html"></a>Your videos</li>
+										<li><a href="account-settings.html"></a>Account Settings</li>
+										<li>Log out</li>
+									</ul>
+								</li>
+								<li class = "drop-down-menu">
+									<a href = "javascript:void()">Plans and Pricing 
+									<img src="img/dropdown.png" alt="Drop Down Arrow"></a>
+									
+									<ul class = "dropdown">
+										<li><a href="commercial-use-plans.html">For Commercial use</a></li>
+										<li><a href="personal-use-plans.html">For Personal use </a></li>
+									</ul>	
+								</li>
+							</ul>
+							
+							<a href="javascript:void()" class ="btn-primary">START TRY</a>
+					</div> 
+					<!-- end after - login -->
+
+				</div>
+				<!-- end header-right -->
+
+			</div>
+			<!-- end header -->
+		</div>
+		<!-- end container -->
+		
+
+		<!-- main content = middle content -->
+		<div id="main-container">	
+				
+			<div class="container">
+				<div class="grid">
+					<div class="grid-heading">
+						<h1>Account Settings</h1>
+					</div>
+				</div>
+
+				<div class="account-settings">
+					<ul>
+						<li data-attribute ="subscription"><a href="javascript:void(0)">Subscription</a></li>
+						
+						<li data-attribute = "password"><a href="javascript:void(0)">Password</a></li><!-- end password - li -->
+						
+						<li data-attribute = "email-pref"><a href="javascript:void(0)">Email preference</a></li>
+
+					</ul>
+			
+					<div>
+						<div class = "ac-subscription disp-none" id = "subscription">
+
+							<div class="email-section">
+								
+								<div class="email">
+									Your mail address
+								</div>
+								<div>
+									dhananjaymg@gmail.com<br/>
+									If you want to change your email address, please contact us at 
+									<a href="">support@goanimate.com</a> from your current email address.
+								</div>
+							</div><!-- end email-section -->
+							
+						</div> 	<!-- end  ac-subscription -->
+
+						<div class = "ac-password" id = "password">
+
+							<div class="change-password-form">
+								<form action="" method="" name="change-password-form">
+									
+									<h1>Change your password</h1>
+								
+									<div class="input-box">
+										<div class="label">
+											<label for="existing-password">Exsisting password</label>
+										</div>
+										<div class="input-field">
+											<input type="password" name="exsisting-password" id="exsisting-password">
+										</div>
+									</div>
+
+									<div class="input-box">
+										<div class="label">
+											<label for="new-password">New password</label>
+										</div>
+										<div class="input-field">
+											<input type="password" name="new-password" id="new-password">
+										</div>
+									</div>
+	
+									<div class="input-box">
+										<div class="label">
+											<label for="confirm-password">Confirm password</label>
+										</div>
+										<div class="input-field">
+											<input type="password" name="confirm-password" id="confirm-password">
+										</div>
+									</div>
+									
+									<div class="input-box">
+										<div class="submit-btn">
+											<button type = "submit" id = "login-submit"class = "btn-primary">Change password</button>
+										</div>	
+									</div>
+								</form><!-- end form -->
+							</div><!-- end login-form -->
+							
+						</div><!-- end ac-password -->
+
+
+						<div class="ac-email-pref disp-none" id = "email-pref">
+							<div class="email-section" >
+								<div class="email">
+									Your mail address
+								</div>
+
+								<div>
+									dhananjaymg@gmail.com<br/>
+									If you want to change your email address, please contact us at 
+									<a href="">support@goanimate.com</a> from your current email address.
+								</div>
+							</div><!-- end email-section -->
+							
+
+							<div class="alerts-section">
+								<h1>Email alerts</h1>
+								<div class="alerts">
+									<div class="alert-info">
+										When people share your videos
+									</div>
+									<div class="alert-action">
+										
+									</div>
+								</div><!-- end alerts -->
+
+								<div class="alerts">
+									<div class="alert-info">
+										When people share your videos you shared
+									</div>
+									<div class="alert-action">
+										
+									</div>
+								</div><!-- end alerts -->
+
+								<h1>Newsletter</h1>
+								<div class="alerts">
+									<div class="alert-info">
+										Receive Anivid news and updates
+									</div>
+									<div class="alert-action">
+										
+									</div>
+								</div><!-- end alerts -->
+							</div>
+						</div><!-- ac-email-pref -->
+					</div><!-- end parent div-->
+				</div><!-- end account settings -->
+			
+			</div><!-- end of container -->
+		
+		</div><!-- end main-container -->
+
+	
+		<!-- footer start -->
+		<div class="footer-main">
+			<div class="footer">
+				<div class="footer-top">
+					<div class="left-one">
+						<h3>About</h3>
+						<ul>
+							<li><a href="javascript:void(0)">Who we are</a></li>
+							<li><a href="javascript:void(0)">Contact Us</a></li>
+							<li><a href="javascript:void()">Blog</a></li>
+						</ul>
+					</div>
+					<div class="left-two">
+						<h3>Solutions</h3>
+						<ul>
+							<li><a href="javascript:void()">Plans and pricing</a></li>
+							<li><a href="javascript:void()">Affiliates program</a></li>
+						</ul>
+					</div>
+					<div class="right-one">
+						<h3>Usage guidelines</h3>
+						<ul>
+							<li><a href="javascript:void()">Video maker tips</a></li>
+							<li><a href="javascript:void()">Help Videos</a></li>
+							<li><a href="javascript:void()">FAQs</a></li>
+							<li><a href="javascript:void()">Forums</a></li>
+						</ul>
+						
+					</div>
+					<div class="right-two">
+						<h3>Getting Help</h3>
+						<ul>
+							<li><a href="javascript:void()">Terms of use for everyone</a></li>
+							<li><a href="javascript:void()">Additional terms for use</a></li>
+							<li><a href="javascript:void()">Legal notices</a></li>
+							<li><a href="javascript:void()">Privacy policy</a></li>
+						</ul>
+					</div>
+				</div><!-- end footer top -->
+
+				<div class="footer-bottom">
+					<ul>
+						<li><a href="javascript:void()" class = "fb"></a></li>
+						<li><a href="javascript:void()" class = "twitter"></a></li>
+						<li><a href="javascript:void()" class = "g-plus"></a></li>
+						<li><a href="javascript:void()" class = "in"></a></li>
+						<li><a href="javascript:void()" class = "you-tube"></a></li>
+					</ul>					
+					<a href="javascript:void()" class = "norton"></a>
+				</div><!-- end footer-bottom -->
+
+				<div class="copy-right">
+					Anivid &copy; 2013
+				</div><!-- end copyright -->
+				
+			</div>
+		</div>
+	</div><!-- end wrapper -->
+
+	<script>
+
+	$(".drop-down-menu").click(function(e){
+		$(this).siblings().removeClass('open')
+		e.stopPropagation();
+		$(this).addClass('open');
+	});
+	
+	$(document).click(function(){
+		$('.drop-down-menu').removeClass('open');
+		$('.share').css('display','none');
+	});
+
+	/*popover*/
+	$('.popover').click(function(e){
+		e.stopPropagation();
+		$('.share').css('top',e.pageY-80);
+		$('.share').css('display','block');
+	});
+
+	//for tabs
+	$('.account-settings ul li').click(function(e){
+		var attr = $(this).data('attribute');
+		$('#'+attr).siblings().hide();
+
+		$('#'+attr).show();
+	});
+
+	</script>
+
+</body>
+</html>

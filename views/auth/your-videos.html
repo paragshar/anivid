@@ -8,7 +8,7 @@
 
 	<meta name="viewport" content="width=device-width">
 
-	<title>ANIVID - Personal use plans </title>
+	<title>ANIVID - Your Videos </title>
 
 	<link rel="stylesheet" href="css/styles.css">
 
@@ -55,13 +55,13 @@
 
 					
 					<div class = "after-login">
-							<ul>
+							<ul >
 								<li class = "drop-down-menu">
 									<a href = "#" >Your Account 
 										<img src="img/dropdown.png" alt="Drop Down Arrow">
 									</a>
 									<ul class = "dropdown">
-										<li><a href=""></a>Your videos</li>
+										<li><a href="your-videos.html"></a>Your videos</li>
 										<li>Account Settings</li>
 										<li>Log out</li>
 									</ul>
@@ -89,131 +89,118 @@
 		</div>
 		<!-- end container -->
 		
-		<div class="container">
-		
-			<section class="package">
 
-				<div class = "package-selection">
-
-					<div class="title">
-
-						<h1>Our Plans for Personal Use</h1>
-						<a href="#">View plans for commercial use &gt;</a>
-					</div><!-- end title -->
-
-					<div class = "each-package">
-						
-						<div class = "pack1">
-							<h2>Standard</h2>
-							<p>Make videos for fun.<br/>For personal use only.</p>
-							<a href = "javascript:void(0)" class = "btn-primary">Choose plan</a>
-							<div class = "price"><span>$18/quarter <br/>or $58/year</span></div>	
-						</div>
-
-					
-						<div class = "pack3">
-							<h2>Premium</h2>
-							<p>Most cost-effective<br/>business plan.</p>
-							<a href = "javascript:void(0)" class = "btn-secondary">Choose plan</a>
-							<div class = "price"><span>$99/quarter <br/>or $299/year</span></div>
-
-						</div>
-
-					</div><!-- end each-package -->
-				</div><!-- end package-selection -->
-
-				<div class = "package-details">
-					<table class = "details">
-
-						<colgroup>
-							<col></col>
-						</colgroup>
-						<tr class = "alt-color-odd">
-							<td>Download / Export Resolution</td>
-							<td>360P</td>
-							<td>up to 720P</td>
-						</tr>
-						<tr class = "alt-color-even">
-							<td>Export to YouTube,Other Sites</td>
-							<td class = "package_select"></td>
-							<td class = "package_select"></td>
-						</tr>
-						<tr class = "alt-color-odd">
-							<td>Produce any number of videos</td>
-							<td class = "package_select"></td>
-							<td class = "package_select"></td>
-						</tr>
-						<tr class = "alt-color-even">
-							<td>Unlimited Hosting / Playback</td>
-							<td class = "package_select"></td>
-							<td class = "package_select"></td>
-						</tr>
-						<tr class = "alt-color-odd">
-							<td>Import Audio, Image and Flash</td>
-							<td class = "package_select"></td>
-							<td class = "package_select"></td>
-						</tr>
-						<tr class = "alt-color-even">
-							<td>Acess All Themes</td>
-							<td class = "package_select_none"></td>
-							<td class = "package_select"></td>
-						</tr>
-						<tr class = "alt-color-odd">
-							<td>Organise your videos</td>
-							<td class = "package_select_none"></td>
-							<td class = "package_select"></td>
-						</tr>
-						<tr class = "alt-color-even">
-							<td>Add Clickable Links</td>
-							<td class = "package_select_none"></td>
-							<td class = "package_select_none"></td>
-						</tr>
-						<tr class = "alt-color-odd">
-							<td>Replace Watermark</td>
-							<td class = "package_select_none"></td>
-							<td class = "package_select_none"></td>		
-						</tr>
-						<tr class = "alt-color-even">
-							<td>Remove / Rotate Watermarks</td>
-							<td class = "package_select_none"></td>
-							<td class = "package_select_none"></td>
-						</tr>
-						<tr class = "alt-color-odd">
-							<td>Transfer Commercial Rights</td>
-							<td class = "package_select_none"></td>
-							<td class = "package_select_none"></td>
-						</tr>
-					</table>
-				</div>
-
-				<!-- bottom menus choose plan -->
+		<!-- main content = middle content -->
+		<div id="main-container">	
 				
-				<div class = "package-selection">
-					<div class = "each-package">
-						
-						<div class = "pack1-bottom">
-							<p>$18/quarter <br/>or $58/year</p>
+			<div class="container">
 
-							<a href = "javascript:void(0)" class = "btn-primary">Choose plan</a>
-	
-						</div>
-					
-						<div class = "pack3-bottom">
-
-							<p>$99/quarter <br/>or $299/year</p>
-
-							<a href = "javascript:void(0)" class = "btn-secondary">Choose plan</a>
-						</div>
-
-					</div><!-- end each-package -->
+				<div class="grid">
+				<div class="grid-heading">
+					<h1>Your Videos</h1>
 				</div>
 
-			</section><!-- end package -->	
+				<div class = "grid-data">
 
-		</div><!-- end container -->
+					<div class="grid-header">
+						<div class = "grid-header-cell video-title">Video title</div>
+						<div class = "grid-header-cell">Last modified</div>
+						<div class = "grid-header-cell">Share</div>
+						<div class = "grid-header-cell">Delete</div>
+					</div>
+
+					<div class="grid-body">
+
+						<div class="grid-body-cell grid-video">
+							<img src="img/sample-video1.png" alt="" width="140px" height="90px"> 
+							<div class="grid-play-button"></div>
+						</div>
+
+						<div class="grid-body-cell"> 
+							<span>Untitled</span>
+						</div>
+						
+						<div class="grid-body-cell">
+							<span>11.01.2013 04.15pm </span>
+						</div>
+						
+						<div class="grid-body-cell popover"> 
+							<img src="img/share.png" alt="">
+						</div>
+						<div class="grid-body-cell"> 
+							<img src="img/trash.png" alt="" class ="delete">
+						</div>					
+					</div> <!-- end grid-body -->	
+
+					<div class="grid-body">
+
+						<div class="grid-body-cell grid-video"> 
+							<img src="img/sample-video1.png" alt="" width="140px" height="90px">
+							<div class="grid-play-button"></div> 
+						</div>
+
+						<div class="grid-body-cell"> 
+							<span>Untitled 1</span>
+						</div>
+						
+						<div class="grid-body-cell">
+							<span>21.06.2013 06.15pm </span>
+						</div>
+						
+						<div class="grid-body-cell popover"> 
+							<img src="img/share.png" alt="">
+						</div>
+						<div class="grid-body-cell"> 
+							<img src="img/trash.png" alt="" class ="delete">
+						</div>					
+					</div> <!-- end grid-body -->	
+
+					<div class="grid-body">
+
+						<div class="grid-body-cell grid-video"> 
+							<img src="img/sample-video1.png" alt="" width="140px" height="90px">
+							<div class="grid-play-button"></div> 
+						</div>
+
+						<div class="grid-body-cell"> 
+							<span>Untitled 2</span>
+						</div>
+						
+						<div class="grid-body-cell">
+							<span>11.01.2014 9.15am </span>
+						</div>
+						
+						<div class="grid-body-cell popover"> 
+							<img src="img/share.png" alt="">
+						</div>
+						<div class="grid-body-cell "> 
+							<img src="img/trash.png" alt="" class ="delete">
+						</div>					
+					</div> <!-- end grid-body -->	
+
+
+				</div><!-- end grid-data -->
+
+				<div class="share">
+					<div class = "share-pop-up">
+						<a href="javascript:void(0)">
+							<img src="img/fb-tool-tip.png">
+						</a>&nbsp;&nbsp;
+						<a href="javascript:void(0)">
+							<img src="img/twitter-tool-tip.png">
+						</a>
+					</div> <!-- end of share-pop-up -->
+				</div><!-- end of share -->
+
+
+				<div class = "go-top"> <a href="#top"> - Go to Top - </a></div>
+			</div><!-- end grid -->
+			</div><!-- end of container -->
+		</div><!-- end main-container -->
 
 	
-		<div class = "footer-main">
+		<!-- footer start -->
+		<div class="footer-main">
 			<div class="footer">
 				<div class="footer-top">
 					<div class="left-one">
@@ -273,19 +260,25 @@
 
 	<script>
 
-	/* display the menu on click*/
 	$(".drop-down-menu").click(function(e){
 		$(this).siblings().removeClass('open')
 		e.stopPropagation();
 		$(this).addClass('open');
-		
 	});
-
-	/* it hides the menu*/
+	
 	$(document).click(function(){
-		 $('.drop-down-menu').removeClass('open');
+		$('.drop-down-menu').removeClass('open');
+		$('.share').css('display','none');
 	});
 
+
+	/*popover*/
+	$('.popover').click(function(e){
+		e.stopPropagation();
+		$('.share').css('top',e.pageY-80);
+		
+		$('.share').css('display','block');
+	});
 	</script>
 
 </body>

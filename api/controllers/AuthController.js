@@ -20,7 +20,7 @@ var address = 'http://localhost:1337/user/verifyEmail/';
 
 module.exports = {
     
-   login: function(req, res){
+   index: function(req, res){
    		//res.view('auth/login');
       res.view();
    },

@@ -48,7 +48,7 @@ module.exports.routes = {
   },
   'get /auth/login': {
     controller: 'auth',
-    action: 'login'
+    action: 'index'
   },
   'post /auth/login': {
     controller: 'auth',

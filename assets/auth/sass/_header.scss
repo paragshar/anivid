@@ -1,0 +1,88 @@
+/*------- Header Sass Styles -------*/
+
+.header{
+	height:100px;
+	// overflow:hidden;
+
+	.header-left{
+		float:left;
+		margin-top:36px;
+
+		a{
+			background:url(../img/sprites.png);
+			background-position: 0 0;
+			height:30px;
+			width:65px;
+			display:inline-block;
+			vertical-align:middle;
+		}
+
+		h1{
+			display:inline-block;
+			vertical-align:middle;
+			color:$heading-color;
+			font-size:30px;
+			font-family:bariol_bold;
+		}
+	}
+
+	.header-right{
+		float:right;
+		margin-top:36px;
+
+		.before-login, .after-login{
+			font-size:18px;
+			ul{
+				float:left;
+				// padding-top:20px;
+				li{
+					position:relative;
+					padding:0px 15px;
+					display:inline-block;
+					
+					a{
+						// padding-top: 2px;
+						vertical-align:middle;
+						color:$text-color;
+						display:block;	
+						&:hover{
+							color:$heading-color
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+.dropdown{
+	margin-top:10px;
+	position:absolute;
+	width:200px;
+	display:none;
+	li{
+		display:block !important;
+		z-index:999;
+		width:145px;
+		background:white;
+		border: 1px solid #ccc;
+		border-bottom:none;
+		// padding-top:10px;
+		text-align:left;
+		a{
+			line-height:30px !important;
+		}
+		&:hover{
+			color:#5f6375 !important;
+		}
+	}
+}
+
+/*------- to open dropdown menu  -------*/
+
+.open{
+	ul{
+		display: block
+	}
+}
