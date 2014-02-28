@@ -26,13 +26,15 @@ function findByUsername(u, fn) {
   });
 }
 
-function findByEmail(u, fn) {
+function findByEmail(e, fn) {
   User.findOne({
-    email: u
+    email: e
   }).done(function (err, user) {
     if (err) {
+      console.log('err finding user with email: '+ e);
       return fn(null, null);
     } else {
+      console.log('User found with email: '+ e);
       return fn(null, user);
     }
   });
@@ -92,11 +94,13 @@ module.exports = {
     customMiddleware: function(app){
       console.log('Express middleware for passport');
 
-        passport.use(new LocalStrategy(
-          function (email, password, done) {
+        passport.use(new LocalStrategy({
+          usernameField: 'email'
+          },
+          function (username, password, done) {
             // asynchronous verification, for effect...
             process.nextTick(function () {
-              findByEmail(email, function (err, user) {
+              findByEmail(username, function (err, user) {
                 if (err)
                   return done(null, err);
                 if (!user) {
@@ -110,7 +114,7 @@ module.exports = {
                       message: 'Invalid Password'
                     });
                   var returnUser = {
-                    email: user.email,
+                    username: user.username,
                     createdAt: user.createdAt,
                     id: user.id
                   };
