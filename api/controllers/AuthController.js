@@ -25,8 +25,12 @@ module.exports = {
       res.view();
    },
 
-   processLogin: function(req, res){    
+   processLogin: function(req, res){
+      console.log("processLogin req.body.username: "+req.body.username);
+      console.log("processLogin req.body.email: "+req.body.email);    
       passport.authenticate('local', function(err, user, info) {
+        console.log('processLogin user.email: '+user.email);
+        console.log('processLogin user.username: '+user.username);
 	      if ((err) || (!user)) {
 	        /*return res.send({
 	        message: 'login failed'
