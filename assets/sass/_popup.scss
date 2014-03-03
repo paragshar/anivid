@@ -69,6 +69,7 @@
 					font-size:25px;
 					color:$text-color;
 					background:#f9f9f9;
+					@include rounded(4px);
 				}
 			}
 		}

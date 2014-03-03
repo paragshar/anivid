@@ -56,14 +56,15 @@
 					
 					<div class = "after-login">
 							<ul >
-								<li class = "drop-down-menu">
-									<a href = "javascrip:void(0)" >Your Account 
+								<h1 id="main-title">Hi <%= user.username %></h1>
+								<li class = "drop-down-menu">									
+									<a href = "#" >Your Account 
 										<img src="img/dropdown.png" alt="Drop Down Arrow">
 									</a>
 									<ul class = "dropdown">
-										<li><a href="your-videos.html">Your videos</a></li>
-										<li><a href="/account">Account Settings</a></li>
-										<li><a href="/auth/logout">Log out</a></li>
+										<li><a href="your-videos.html"></a>Your videos</li>
+										<li>Account Settings</li>
+										<li>Log out</li>
 									</ul>
 								</li>
 								<li class = "drop-down-menu">
@@ -71,8 +72,8 @@
 									<img src="img/dropdown.png" alt="Drop Down Arrow"></a>
 									
 									<ul class = "dropdown">
-										<li><a href="commercial-use-plans.html">For Commercial use</a></li>
-										<li><a href="personal-use-plans.html">For Personal use </a></li>
+										<li><a href="templates/commercial-use-plans.html">For Commercial use</a></li>
+										<li><a href="templates/personal-use-plans.html">For Personal use </a></li>
 									</ul>	
 								</li>
 							</ul>
@@ -256,17 +257,7 @@
 				
 			</div>
 		</div>
-
-
-<!--
-<div>
-	-moz-transform: scale(0.8) rotate(0deg) translate(0px, 0px) skew(30deg, 0deg);
-	-webkit-transform: scale(0.8) rotate(0deg) translate(0px, 0px) skew(30deg, 0deg);
-	-o-transform: scale(0.8) rotate(0deg) translate(0px, 0px) skew(30deg, 0deg);
-	-ms-transform: scale(0.8) rotate(0deg) translate(0px, 0px) skew(30deg, 0deg);
-transform: scale(0.8) rotate(0deg) translate(0px, 0px) skew(30deg, 0deg);
-</div>
--->	</div><!-- end wrapper -->
+	</div><!-- end wrapper -->
 
 	<script>
 

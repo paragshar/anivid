@@ -278,8 +278,8 @@ a {
 }
 /* line 89, ../sass/_your_video.scss */
 .share .share-pop-up {
-  width: 125px;
-  height: 50px;
+  width: 100px;
+  height: auto;
   position: relative;
   background: #ffffff;
   border-radius: 5px;
@@ -291,7 +291,7 @@ a {
 }
 /* line 101, ../sass/_your_video.scss */
 .share .share-pop-up:after, .share .share-pop-up:before {
-  top: 100%;
+  top: 101%;
   left: 50%;
   border: solid transparent;
   content: " ";
@@ -519,16 +519,17 @@ a {
   font-size: 25px;
   color: #3d4258;
   background: #f9f9f9;
+  border-radius: 4px;
 }
-/* line 76, ../sass/_popup.scss */
+/* line 77, ../sass/_popup.scss */
 .login-popup .login-form .login-button {
   overflow: hidden;
 }
-/* line 80, ../sass/_popup.scss */
+/* line 81, ../sass/_popup.scss */
 .login-popup .login-form .login-button .login {
   float: right;
 }
-/* line 83, ../sass/_popup.scss */
+/* line 84, ../sass/_popup.scss */
 .login-popup .login-form .login-button .login .submit-btn {
   display: inline-block;
   vertical-align: middle;
@@ -536,29 +537,29 @@ a {
   font-style: bariol_regular;
   margin-right: 15px;
 }
-/* line 89, ../sass/_popup.scss */
+/* line 90, ../sass/_popup.scss */
 .login-popup .login-form .login-button .login .submit-btn button {
   border: none;
   outline: none;
 }
-/* line 95, ../sass/_popup.scss */
+/* line 96, ../sass/_popup.scss */
 .login-popup .login-form .login-button .login .forgot-pwd {
   display: inline-block;
   vertical-align: middle;
 }
-/* line 98, ../sass/_popup.scss */
+/* line 99, ../sass/_popup.scss */
 .login-popup .login-form .login-button .login .forgot-pwd a {
   color: #f25f5e;
   font-size: 18px;
   margin-right: 20px;
 }
 
-/* line 109, ../sass/_popup.scss */
+/* line 110, ../sass/_popup.scss */
 .span-red {
   color: #f25f5e;
 }
 
-/* line 116, ../sass/_popup.scss */
+/* line 117, ../sass/_popup.scss */
 .social-login-buttons .social-button-fb {
   background: url("../img/fb-button.png") no-repeat;
   outline: none;
@@ -686,7 +687,6 @@ a {
   display: inline-block;
   color: white;
   font-size: 30px;
-  font-family: bariol_bold;
 }
 /* line 101, ../sass/styles.scss */
 .banner-bg .banner h2 {
@@ -1290,7 +1290,6 @@ a {
 
 /* line 646, ../sass/styles.scss */
 .details {
-  cellpadding: 10px;
   width: 100%;
   color: #565656;
   text-align: center;
@@ -1331,21 +1330,27 @@ a {
 }
 
 /* line 693, ../sass/styles.scss */
+.orange-color {
+  color: #f25f5e;
+  font-weight: bold;
+}
+
+/* line 698, ../sass/styles.scss */
 .right {
   float: right;
 }
 
-/* line 696, ../sass/styles.scss */
+/* line 701, ../sass/styles.scss */
 .social-btns {
   margin-top: 20px;
   overflow: hidden;
 }
-/* line 699, ../sass/styles.scss */
+/* line 704, ../sass/styles.scss */
 .social-btns a {
   display: block;
   width: 175px;
 }
-/* line 705, ../sass/styles.scss */
+/* line 710, ../sass/styles.scss */
 .social-btns a .fb-main .fb-icon {
   background: url("../img/fb-icon.png") no-repeat;
   height: 23px;
@@ -1355,7 +1360,7 @@ a {
   border-right: 2px solid #203b71;
   padding-right: 5px;
 }
-/* line 714, ../sass/styles.scss */
+/* line 719, ../sass/styles.scss */
 .social-btns a .fb-main .fb-text {
   color: white;
   font-weight: bold;
@@ -1364,7 +1369,7 @@ a {
   display: inline-block;
   padding-left: 2px;
 }
-/* line 726, ../sass/styles.scss */
+/* line 731, ../sass/styles.scss */
 .social-btns a .gplus-main .gplus-icon {
   background: url("../img/g-plus-icon.png") no-repeat;
   height: 20px;
@@ -1374,7 +1379,7 @@ a {
   border-right: 2px solid #cecece;
   padding-right: 5px;
 }
-/* line 735, ../sass/styles.scss */
+/* line 740, ../sass/styles.scss */
 .social-btns a .gplus-main .gplus-text {
   color: #000;
   font-weight: bold;
@@ -1384,94 +1389,245 @@ a {
 }
 
 /*------- login page social button margin -------*/
-/* line 749, ../sass/styles.scss */
+/* line 754, ../sass/styles.scss */
 .signup-margin {
   margin: 20px 0px;
 }
 
-/* line 753, ../sass/styles.scss */
+/* line 758, ../sass/styles.scss */
 .login-margin {
   margin: 15px 10px;
 }
 
 /*------- Account Settings -------*/
-/* line 762, ../sass/styles.scss */
+/* line 767, ../sass/styles.scss */
 .account-settings ul {
   text-align: left;
 }
-/* line 764, ../sass/styles.scss */
+/* line 769, ../sass/styles.scss */
 .account-settings ul li {
   display: inline-block;
   height: 40%;
 }
-/* line 767, ../sass/styles.scss */
+/* line 772, ../sass/styles.scss */
 .account-settings ul li a {
   display: block;
   padding: 30px 20px;
   font-size: 20px;
   font-weight: bold;
 }
-/* line 775, ../sass/styles.scss */
+/* line 780, ../sass/styles.scss */
 .account-settings ul li a:active {
   color: #f25b5a;
 }
-/* line 778, ../sass/styles.scss */
+/* line 783, ../sass/styles.scss */
 .account-settings ul li a:visited {
   border-bottom: 5px solid #00f;
 }
 
-/* line 787, ../sass/styles.scss */
+/* line 791, ../sass/styles.scss */
 .selected {
   color: #f25b5a;
 }
 
-/* line 792, ../sass/styles.scss */
+/*------- change password tab -------*/
+/* line 797, ../sass/styles.scss */
 .change-password-form {
   width: 500px;
   font-size: 18px;
   padding: 5px 20px 20px 20px;
 }
-/* line 798, ../sass/styles.scss */
+/* line 803, ../sass/styles.scss */
 .change-password-form h1 {
   font-size: 18px;
   text-align: left;
   font-weight: bold;
   padding: 20px 0px;
 }
-/* line 804, ../sass/styles.scss */
+/* line 809, ../sass/styles.scss */
 .change-password-form .input-box {
   overflow: hidden;
+  margin: 20px 0;
 }
-/* line 806, ../sass/styles.scss */
+/* line 812, ../sass/styles.scss */
 .change-password-form .input-box .label {
   float: left;
   display: inline-block;
 }
-/* line 810, ../sass/styles.scss */
+/* line 816, ../sass/styles.scss */
 .change-password-form .input-box .input-field {
   float: right;
   display: inline-block;
 }
-/* line 813, ../sass/styles.scss */
+/* line 819, ../sass/styles.scss */
 .change-password-form .input-box .input-field input {
   border: 1px solid #ccc;
-  @inlcude rounded(5px);
+  border-radius: 5px;
+  height: 30px;
+  width: 250px;
+  font-size: 25px;
+  outline: none;
+  padding: 5px;
+  color: #3d4258;
 }
-/* line 819, ../sass/styles.scss */
+/* line 831, ../sass/styles.scss */
 .change-password-form .submit-btn {
   display: inline-block;
   vertical-align: middle;
   font-size: 18px;
-  font-style: bariol_regular;
   margin-right: 15px;
 }
-/* line 825, ../sass/styles.scss */
+/* line 837, ../sass/styles.scss */
 .change-password-form .submit-btn button {
   border: none;
   outline: none;
+  margin-left: 145px;
 }
 
-/* line 832, ../sass/styles.scss */
+/* line 845, ../sass/styles.scss */
 .disp-none {
   display: none;
+}
+
+/*------- subscription page -------*/
+/* line 852, ../sass/styles.scss */
+.ac-subscription {
+  overflow: hidden;
+}
+/* line 855, ../sass/styles.scss */
+.ac-subscription .email-section {
+  clear: both;
+  overflow: hidden;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  width: 500px;
+  font-size: 20px;
+  margin: 10px 0px 20px 0px;
+}
+/* line 863, ../sass/styles.scss */
+.ac-subscription .email-section .email {
+  display: inline-block;
+  border-right: 1px solid #ccc;
+  padding: 20px;
+  margin-left: 50px;
+}
+/* line 870, ../sass/styles.scss */
+.ac-subscription .email-section .email-info {
+  display: inline-block;
+  padding: 20px;
+  text-align: left;
+  width: 150px;
+  margin-right: 20px;
+}
+/* line 880, ../sass/styles.scss */
+.ac-subscription .email-note {
+  margin: 20px 0px;
+  font-size: 16px;
+  text-align: left;
+}
+/* line 885, ../sass/styles.scss */
+.ac-subscription .email-note a {
+  color: #3d4258;
+  font-weight: bold;
+}
+/* line 892, ../sass/styles.scss */
+.ac-subscription .subs-details h1 {
+  font-size: 18px;
+  text-align: left;
+  padding: 10px 0 10px 10px;
+}
+/* line 898, ../sass/styles.scss */
+.ac-subscription .subs-details .subs-pack {
+  overflow: hidden;
+  border-top: 1px solid #ccc;
+}
+/* line 902, ../sass/styles.scss */
+.ac-subscription .subs-details .subs-pack .subs-pack-title {
+  float: left;
+  text-align: left;
+  padding: 10px;
+  line-height: 25px;
+  vertical-align: middle;
+}
+/* line 911, ../sass/styles.scss */
+.ac-subscription .subs-details .subs-pack .subs-link {
+  float: right;
+  vertical-align: middle;
+  margin-top: 10px;
+}
+/* line 915, ../sass/styles.scss */
+.ac-subscription .subs-details .subs-pack .subs-link a {
+  display: block;
+  background: url("../img/subs.png") no-repeat;
+  height: 40px;
+  padding: 10px 20px;
+}
+/* line 920, ../sass/styles.scss */
+.ac-subscription .subs-details .subs-pack .subs-link a:hover {
+  display: block;
+  background: url("../img/subs-hover.png") no-repeat;
+  height: 40px;
+  padding: 10px 20px;
+}
+
+/* line 935, ../sass/styles.scss */
+.ac-email-pref {
+  overflow: hidden;
+}
+/* line 939, ../sass/styles.scss */
+.ac-email-pref .email-section {
+  clear: both;
+  overflow: hidden;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  width: 700px;
+}
+/* line 946, ../sass/styles.scss */
+.ac-email-pref .email-section .email {
+  display: inline-block;
+  border-right: 1px solid #ccc;
+  padding: 30px 20px;
+}
+/* line 953, ../sass/styles.scss */
+.ac-email-pref .email-section .email-info {
+  float: left;
+  display: inline-block;
+  text-align: left;
+  padding: 10px 35px;
+}
+/* line 959, ../sass/styles.scss */
+.ac-email-pref .email-section .email-info h1 {
+  font-weight: bold;
+}
+
+/* line 967, ../sass/styles.scss */
+.alerts-section {
+  margin: 20px 20px 0 20px;
+}
+/* line 969, ../sass/styles.scss */
+.alerts-section h1 {
+  font-size: 22px;
+  font-weight: bold;
+  text-align: left;
+}
+/* line 974, ../sass/styles.scss */
+.alerts-section .alerts {
+  overflow: hidden;
+  width: 600px;
+}
+/* line 977, ../sass/styles.scss */
+.alerts-section .alerts .alert-info {
+  float: left;
+  display: inline-block;
+  padding: 20px 0px;
+  text-align: left;
+}
+/* line 982, ../sass/styles.scss */
+.alerts-section .alerts .alert-info .news-note {
+  color: #8e8e8e;
+}
+/* line 987, ../sass/styles.scss */
+.alerts-section .alerts .alert-action {
+  float: right;
+  padding: 20px 0px;
 }

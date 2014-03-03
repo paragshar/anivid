@@ -95,7 +95,7 @@
 			display:inline-block;
 			color:white;
 			font-size:30px;
-			font-family:bariol_bold;
+//			font-family:bariol_bold;
 		}
 		
 		h2{
@@ -645,7 +645,7 @@
 
 .details{
 	// border-collapse:collapse;
-	cellpadding:10px;
+//	cellpadding:10px;
 	width:100%;
 	color:#565656;
 	// border:1px solid #000;
@@ -688,6 +688,11 @@
 
 .left{
 	float:left;
+}
+
+.orange-color{
+	color:$heading-color;
+	font-weight:bold;
 }
 
 .right{
@@ -777,7 +782,6 @@
 				}
 				&:visited{
 					border-bottom:5px solid #00f;
-
 				}
 			}
 		}
@@ -788,6 +792,7 @@
 	color:$link-color
 }
 
+/*------- change password tab -------*/
 
 .change-password-form{
 
@@ -803,6 +808,7 @@
 	}
 	.input-box{
 		overflow:hidden;
+		margin:20px 0;
 		.label{
 			float:left;
 			display:inline-block;
@@ -812,7 +818,13 @@
 			display:inline-block;
 			input{
 				border:1px solid #ccc;
-				@inlcude rounded(5px);
+				@include rounded(5px);
+				height:30px;
+				width:250px;
+				font-size:25px;
+				outline:none;
+				padding:5px;
+				color:$text-color;
 			}
 		}
 	}
@@ -820,15 +832,161 @@
 		display:inline-block;
 		vertical-align:middle;
 		font-size:18px;
-		font-style:bariol_regular;
+		// font-style:bariol_regular;
 		margin-right:15px;
 		button{
 			border:none;
-			outline:none;					
+			outline:none;
+			margin-left:145px;					
 		}
 	}
 }
 
 .disp-none{
 	display:none;
+}
+
+
+/*------- subscription page -------*/
+
+.ac-subscription{
+	overflow:hidden;
+
+	.email-section{
+		clear:both;
+		overflow:hidden;
+		border-top:1px solid #ccc;
+		border-bottom:1px solid #ccc;
+		width:500px;	
+		font-size:20px;
+		margin:10px 0px 20px 0px;
+		.email{
+			display: inline-block;
+			border-right:1px solid #ccc;
+			padding:20px;
+			margin-left:50px;
+		}
+		
+		.email-info{
+			display: inline-block;			
+			padding:20px;
+			text-align:left;
+			width:150px;
+			margin-right:20px;
+			//color:#ddd;
+		}
+	}
+	
+	.email-note{
+		margin:20px 0px;
+		font-size:16px;
+		text-align:left;
+
+		a{
+			color:$text-color;
+			font-weight:bold;
+		}
+	}
+
+	.subs-details{
+		h1{
+			// float:left;
+			font-size:18px;
+			text-align:left;
+			padding:10px 0 10px 10px;
+		}
+		.subs-pack{
+			overflow:hidden;
+			border-top:1px solid #ccc;
+
+			.subs-pack-title{
+				float:left;
+				text-align:left;
+				padding:10px;
+				line-height:25px;
+				vertical-align:middle;
+					
+			}
+
+			.subs-link{
+				float:right;
+				vertical-align:middle;
+				margin-top:10px;
+				a{
+				display:block;
+				background:url('../img/subs.png') no-repeat;
+				height:40px;
+				padding:10px 20px;
+					&:hover{
+					display:block;
+					background:url('../img/subs-hover.png') no-repeat;
+					height:40px;
+					padding:10px 20px;					
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+
+.ac-email-pref{
+
+	overflow:hidden;
+
+	.email-section{
+		clear:both;
+		overflow:hidden;
+		border-top:1px solid #ccc;
+		border-bottom:1px solid #ccc;
+		width:700px;
+
+		.email{
+			display: inline-block;
+			border-right:1px solid #ccc;
+			// margin-left:50px;
+			padding:30px 20px;
+		}
+		
+		.email-info{
+			float:left;
+			display: inline-block;			
+			text-align:left;
+			// margin-right:20px;
+			padding: 10px 35px;
+			h1{
+				font-weight:bold;
+			}
+		}
+	}
+
+}
+
+.alerts-section{
+	margin:20px 20px 0 20px;
+	h1{
+		font-size:22px;
+		font-weight:bold;
+		text-align:left;
+	}
+	.alerts{
+		overflow:hidden;
+		width:600px;
+		.alert-info{
+			float:left;
+			display:inline-block;
+			padding:20px 0px;
+			text-align:left;
+			.news-note{
+				color:#8e8e8e;
+			}
+		}
+
+		.alert-action{
+			float:right;
+			padding:20px 0px;
+		}
+	}
 }

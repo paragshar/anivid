@@ -87,8 +87,8 @@
 	}
 
 	.share-pop-up {
-		width:125px;
-		height:50px;
+		width:100px;
+		height:auto;
 		position: relative;
 		background: #ffffff;
 		@include rounded(5px);
@@ -99,7 +99,7 @@
 		}
 	}
 	.share-pop-up:after, .share-pop-up:before {
-		top: 100%;
+		top: 101%;
 		left: 50%;
 		border: solid transparent;
 		content: " ";

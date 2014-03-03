@@ -38,19 +38,27 @@ module.exports.routes = {
   '/' : {
     controller : 'home'
   },
-  'get /auth/signup': {
+  '/account' :{
+    controller : 'home',
+    action: 'account'
+  },
+  'post /updatePassword' :{
+      controller: 'home',
+      action: 'updatePassword'
+  },
+  'get /signup': {
      controller: 'auth',
      action: 'signup'
   },
-  'post /auth/signup': {
+  'post /signup': {
     controller: 'auth',
     action: 'processSignup'
   },
-  'get /auth/login': {
+  'get /login': {
     controller: 'auth',
     action: 'index'
   },
-  'post /auth/login': {
+  'post /login': {
     controller: 'auth',
     action: 'processLogin'
   },
@@ -74,7 +82,7 @@ module.exports.routes = {
     controller: 'auth',
     action: 'google/callback'
   },
-  'get /auth/logout': {
+  'get /logout': {
     controller: 'auth',
     action: 'logout'
   }

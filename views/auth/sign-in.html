@@ -103,44 +103,58 @@
 				
 			<div class="container">
 
-				<div class="login-popup signin-popup-display" style="display:block">
+				<div class="login-popup signin-popup-display">
 
-					<div class="close-button signin-popup-close"></div>
+			<div class="close-button signin-popup-close"></div>
 
-						<div class="form-heading">
-							<h1>Login <span>ANIVID</span></h1>
-						</div><!-- end heading -->
+			<div class="form-heading">
+				<h1>Login <span>ANIVID</span></h1>
+			</div><!-- end heading -->
 
-						<div class="login-form">
-							<form action="" method="" name="login-form">
-								<div class="input-field"><label for="email">Email address</label>
-									<div class="input-box">
-										<input type="email" name="username" id="username">
-									</div>
-								</div><!-- end input field -->
-
-								<div class="input-field"><label for="password">Password</label>
-									<div class="input-box">
-										<input type="password" name="password" id="password">
-									</div>
-								</div><!-- end input field -->
-
-								<div class="login-button">
-									<button type = "submit" id = "login-submit"class = "btn-primary submit-button">Sign in</button>
-									<div class = "forgot-pwd">
-										<label for="forgot-password">
-											Registered? <a href="">Login</a>
-										</label>
-									</div>
-								</div>							
-							</form><!-- end form -->
-						</div><!-- end login-form -->
-
-						<div class="signin-social">
-							<div class = "social-link-icon"><img src="img/fb-icon.png" alt=""></div>
-							<div class = "social-link-text"><span>Signin with Facebook</span></div>
+			<div class="login-form">
+				<form action="javascript:void()" method="" name="login-form">
+					<div class="input-field"><label for="email">Email address</label>
+						<div class="input-box">
+							<input type="email" name="username" id="username">
 						</div>
-				</div> <!-- end login-popup -->
+					</div><!-- end input field -->
+
+					<div class="input-field"><label for="password">Password</label>
+						<div class="input-box">
+							<input type="password" name="password" id="password">
+						</div>
+					</div><!-- end input field -->
+
+					<div class="login-button">
+						<div class="login">
+							<div class="submit-btn">
+								<button type = "submit" id = "login-submit"class = "btn-primary">Sign in</button>
+							</div>
+							<div class = "forgot-pwd">
+							<label for="forgot-password">
+								<a href="javascript:void()">Forgot Password?</a></label>
+							</div>
+						</div>
+					</div>							
+				</form><!-- end form -->
+			</div><!-- end login-form -->
+
+			<div class="social-btns login-margin">
+				<a href="javascript:" class="btn-blue left">
+					<div class = "fb-main">
+						<div class="fb-icon"></div>
+						<div class ="fb-text">Sign in with Facebook</div>
+					</div>
+				</a>
+				
+				<a href="javascript:" class = "btn-white right">					
+					<div class="gplus-main">
+						<div class="gplus-icon"></div>
+						<div class ="gplus-text">Sign in with Google</div>
+					</div>
+				</a>
+			</div>
+		</div> <!-- end login-popup -->
 			</div><!-- end of container -->
 		</div><!-- end main-container -->
 

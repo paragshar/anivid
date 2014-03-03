@@ -35,7 +35,7 @@ module.exports = {
 	        /*return res.send({
 	        message: 'login failed'
 	        });*/
-	        res.redirect('/auth/login');
+	        res.redirect('/login');
 	        res.send(err);
 	      }
 	      req.logIn(user, function(err) {
@@ -171,7 +171,7 @@ module.exports = {
 
   logout: function (req, res) {
         req.logout();
-        res.redirect('/auth/login');
+        res.redirect('/login');
   }
   /**
    * Overrides for the settings in `config/controllers.js`
@@ -181,7 +181,7 @@ module.exports = {
   _config: {}  
 };
 
-module.exports.blueprints = {
+/*module.exports.blueprints = {
  
   // Expose a route for every method,
   // e.g.
@@ -197,7 +197,7 @@ module.exports.blueprints = {
   // (useful for prototyping)
   shortcuts: true
  
-};
+};*/
 
 var generateRandomAlphaNumeric = function(length, callback){
     var chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
