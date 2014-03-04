@@ -57,13 +57,13 @@
 					<div class = "after-login">
 							<ul >
 								<li class = "drop-down-menu">
-									<a href = "javascrip:void(0)" >Your Account 
+									<a href = "javascript:void(0)" >Your Account 
 										<img src="img/dropdown.png" alt="Drop Down Arrow">
 									</a>
 									<ul class = "dropdown">
-										<li><a href="your-videos.html">Your videos</a></li>
+										<li><a href="/">Your videos</a></li>
 										<li><a href="/account">Account Settings</a></li>
-										<li><a href="/auth/logout">Log out</a></li>
+										<li><a href="/logout">Log out</a></li>
 									</ul>
 								</li>
 								<li class = "drop-down-menu">
@@ -97,8 +97,12 @@
 
 				<div class="grid">
 				<div class="grid-heading">
-					<h1>Your Videos</h1>
+					<h1>Your Videos <%= user.username %></h1>
 				</div>
+
+		        
+		        
+			            
 
 				<div class = "grid-data">
 
@@ -109,75 +113,33 @@
 						<div class = "grid-header-cell">Delete</div>
 					</div>
 
-					<div class="grid-body">
 
-						<div class="grid-body-cell grid-video">
-							<img src="img/sample-video1.png" alt="" width="140px" height="90px"> 
-							<div class="grid-play-button"></div>
-						</div>
+					<table class="table">
+		        	<% for(i=0 ; i < vedio.length ; i++) { %>
+						<div class="grid-body">
 
-						<div class="grid-body-cell"> 
-							<span>Untitled</span>
-						</div>
-						
-						<div class="grid-body-cell">
-							<span>11.01.2013 04.15pm </span>
-						</div>
-						
-						<div class="grid-body-cell popover"> 
-							<img src="img/share.png" alt="">
-						</div>
-						<div class="grid-body-cell"> 
-							<img src="img/trash.png" alt="" class ="delete">
-						</div>					
-					</div> <!-- end grid-body -->	
+							<div class="grid-body-cell grid-video">
+								<img src="img/sample-video1.png" alt="" width="140px" height="90px"> 
+								<div class="grid-play-button"></div>
+							</div>
 
-					<div class="grid-body">
-
-						<div class="grid-body-cell grid-video"> 
-							<img src="img/sample-video1.png" alt="" width="140px" height="90px">
-							<div class="grid-play-button"></div> 
-						</div>
-
-						<div class="grid-body-cell"> 
-							<span>Untitled 1</span>
-						</div>
-						
-						<div class="grid-body-cell">
-							<span>21.06.2013 06.15pm </span>
-						</div>
-						
-						<div class="grid-body-cell popover"> 
-							<img src="img/share.png" alt="">
-						</div>
-						<div class="grid-body-cell"> 
-							<img src="img/trash.png" alt="" class ="delete">
-						</div>					
-					</div> <!-- end grid-body -->	
-
-					<div class="grid-body">
-
-						<div class="grid-body-cell grid-video"> 
-							<img src="img/sample-video1.png" alt="" width="140px" height="90px">
-							<div class="grid-play-button"></div> 
-						</div>
-
-						<div class="grid-body-cell"> 
-							<span>Untitled 2</span>
-						</div>
-						
-						<div class="grid-body-cell">
-							<span>11.01.2014 9.15am </span>
-						</div>
-						
-						<div class="grid-body-cell popover"> 
-							<img src="img/share.png" alt="">
-						</div>
-						<div class="grid-body-cell "> 
-							<img src="img/trash.png" alt="" class ="delete">
-						</div>					
-					</div> <!-- end grid-body -->	
-
+							<div class="grid-body-cell"> 
+								<span><%= vedio[i]['vedio'] %></span>
+							</div>
+							
+							<div class="grid-body-cell">
+								<span><%= vedio[i]['updatedAt'] %></span>
+							</div>
+							
+							<div class="grid-body-cell popover"> 
+								<img src="img/share.png" alt="">
+							</div>
+							<div class="grid-body-cell">
+								<a href = '/deleteVedio/<%= vedio[i]['id'] %>'><img src="img/trash.png" alt="" class ="delete"></img></a>
+							</div>					
+						</div>			        
+				       <% } %>
+			        </table>	
 
 				</div><!-- end grid-data -->
 

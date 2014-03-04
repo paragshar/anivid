@@ -22,14 +22,30 @@ module.exports = {
     index: function (req,res)    {
         console.log("req.user: "+req.user);
         console.log("req.user.email: "+req.user.email);
-        console.log("req.session.user: "+req.session.user);
-        res.view({
-            user: req.user
+        console.log("req.user.id: "+req.user.id);
+
+        Vedio.find({email: req.user.email}).done(function (err, userVedios){
+          console.log("userVedios: "+userVedios);
+            res.view({
+                user: req.user,
+                vedio: userVedios
+            });            
         });
     },
 
-    account: function(req, res){
-        res.view('home/account-settings');
+
+    deleteVedio: function(req, res){
+        console.log('deleting vedio with id: '+req.param('id'));
+        Vedio.findOne(req.param('id')).done(function(err, vedio) {
+          vedio.destroy(function(err) {
+          });
+          res.redirect('/');
+        });
+    },
+
+    'account-settings': function(req, res){
+        //res.view('home/account-settings');
+        res.view({user: req.user});
     },
 
     viewProfile: function(req, res){

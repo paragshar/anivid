@@ -40,7 +40,11 @@ module.exports.routes = {
   },
   '/account' :{
     controller : 'home',
-    action: 'account'
+    action: 'account-settings'
+  },
+  '/deleteVedio/:id':{
+     controller: 'home',
+     action: 'deleteVedio'
   },
   'post /updatePassword' :{
       controller: 'home',
