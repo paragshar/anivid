@@ -15,11 +15,20 @@
  * @docs        :: http://sailsjs.org/#!documentation/controllers
  */
 
+"use strict";
 var bcrypt = require('bcrypt');
+var paypal_api = require('paypal-rest-sdk');
+
+paypal_api.configure({
+          'host': 'api.sandbox.paypal.com',
+          'port': '',
+          'client_id': 'ATsZkxBGMDqsLcrkZTsnE1hCv9R5vkO_4aTUMiOan2NdIC739_fkv0pT2nrf',
+          'client_secret': 'ECP8jRA3UQsG9hrY1izXke_oYuS_ujcvaZvKm5G4UMPlLgIlI9zKlZj4kyn4' });
 
 module.exports = {
 
-    index: function (req,res)    {
+    index: function (req,res){
+
         console.log("req.user: "+req.user);
         console.log("req.user.email: "+req.user.email);
         console.log("req.user.id: "+req.user.id);
@@ -33,6 +42,72 @@ module.exports = {
         });
     },
 
+    pay: function(req, res){
+
+
+      console.log("req.user: "+req.user);
+      console.log("req.user.email: "+req.user.email);
+      console.log("req.user.id: "+req.user.id);
+
+      var create_payment_json = {
+          "intent": "sale",
+          "payer": {
+              "payment_method": "paypal"
+          },
+          "redirect_urls": {
+              "return_url": "http://localhost:1337/paymentDone",
+              "cancel_url": "http://localhost:1337/logout"
+          },
+          "transactions": [{
+              "amount": {
+                  "currency": "USD",
+                  "total": "2.00"
+              },
+              "description": "Ultimate Produce Full HD videos with no watermark. ($599/year)"
+          }]
+      }; 
+      paypal_api.payment.create(create_payment_json, function (err, payment) {
+          if (err) {
+              throw err;
+          }
+          if (payment) {
+              req.session.paymentId = payment.id;
+              var link = payment.links[1].href;
+              res.redirect(link);
+          }
+      });
+    },
+
+    paymentDone: function(req, res){
+
+      var paymentId = req.session.paymentId;
+      var payerId = req.param('PayerID');
+      var details = { "payer_id": payerId };
+      paypal_api.payment.execute(paymentId, details, function (error, payment) {
+        console.log('payment: '+ payment);
+        if (error) {
+          res.send(error);
+        } 
+        else 
+        {
+                Order.create({
+                  email: req.user.email,
+                  paymentId: paymentId
+                }).done(function(err, order){
+                  if(err){
+                      console.log('err: '+err);
+                  }
+                  else{
+                      console.log('order: '+ order);
+
+                  }
+                });
+
+          //res.send("Payment has been done!");
+                res.redirect('/');
+        }
+      });
+    },
 
     deleteVedio: function(req, res){
         console.log('deleting vedio with id: '+req.param('id'));

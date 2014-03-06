@@ -239,6 +239,32 @@
 
 				<div class = "next-page">
 					<p>We also offer plans for personal use (starting at $58/year). <a href="personal-use-plans.html"><span>View plans for personal use &nbsp;&gt;</span></a></p>
+
+
+					<!-- PayPal Logo --><!-- <table border="0" cellpadding="10" cellspacing="0" align="center"><tr><td align="center"></td></tr><tr><td align="center"><a href="https://www.paypal.com/in/webapps/mpp/paypal-popup" title="How PayPal Works" onclick="javascript:window.open('https://www.paypal.com/in/webapps/mpp/paypal-popup','WIPaypal','toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=1060, height=700'); return false;"><img src="https://www.paypalobjects.com/webstatic/en_IN/mktg/logos/pp_cc_mark_37x23.jpg" border="0" alt="PayPal Logo"></a></td></tr></table> --><!-- PayPal Logo -->
+
+					<!-- <img src="https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif" align="left" style="margin-right:7px;"> -->
+
+					<!-- <form method=post action='https://api-3t.sandbox.paypal.com/nvp'>
+						<input type=hidden name=USER value='deepanshukumarsingh-facilitator_api1.gmail.com'>
+						<input type=hidden name=PWD value='1394015514'>
+						<input type=hidden name=SIGNATURE value='AFcWxV21C7fd0v3bYYYRCpSSRl31AN-ugUmBwZe905k8jb4AJ-4H-JWo'>
+						<input type=hidden name=VERSION value='98'>
+						<input type=hidden name=PAYMENTREQUEST_0_PAYMENTACTION
+							value='Sale'>
+						<input name=PAYMENTREQUEST_0_AMT value='19.95'>
+						<input type=hidden name=RETURNURL
+							value='https://localhost:1337'>
+						<input type=hidden name=CANCELURL
+							value='https://localhost:1337/logout'>
+						<input type=submit name=METHOD value=SetExpressCheckout>
+					</form> -->
+
+					<form method=post action='/pay'>
+						<input type=hidden name=amount value='2'>
+						<input type=submit name=METHOD value=ExpressCheckout>
+					</form>
+
 				</div>
 
 			</section><!-- end package -->

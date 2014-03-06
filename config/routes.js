@@ -38,6 +38,14 @@ module.exports.routes = {
   '/' : {
     controller : 'home'
   },
+  '/pay':{
+    controller: 'home',
+    action: 'pay'
+  },
+  '/paymentDone': {
+    controller: 'home',
+    action: 'paymentDone'
+  },
   '/account' :{
     controller : 'home',
     action: 'account-settings'
