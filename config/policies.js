@@ -25,6 +25,9 @@ module.exports.policies = {
 
   'auth': {
     '*': true
+  },
+  'page' :{
+  	'*': true
   }
 
   /*

@@ -58,6 +58,14 @@ module.exports.routes = {
       controller: 'home',
       action: 'updatePassword'
   },
+  '/commercial-use-plans' :{
+     controller: 'page',
+     action: 'commercial-use-plans'
+  },
+  '/personal-use-plans' :{
+     controller: 'page',
+     action: 'personal-use-plans'
+  },
   'get /signup': {
      controller: 'auth',
      action: 'signup'

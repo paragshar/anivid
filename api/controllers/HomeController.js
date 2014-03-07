@@ -56,7 +56,7 @@ module.exports = {
           },
           "redirect_urls": {
               "return_url": "http://localhost:1337/paymentDone",
-              "cancel_url": "http://localhost:1337/logout"
+              "cancel_url": "http://localhost:1337/"
           },
           "transactions": [{
               "amount": {
@@ -90,18 +90,39 @@ module.exports = {
         } 
         else 
         {
-                Order.create({
-                  email: req.user.email,
-                  paymentId: paymentId
-                }).done(function(err, order){
-                  if(err){
-                      console.log('err: '+err);
-                  }
-                  else{
-                      console.log('order: '+ order);
+          console.log('Updating plan for user with email: '+req.user.email);
+          Order.findOne({email: req.user.email}).done(function (err, order){
+                if(!order){
+                      console.log('Updating plan for the first time');
+                      Order.create({
+                      email: req.user.email,
+                      paymentId: paymentId,
+                      plan: 'upgraded'
 
-                  }
-                });
+                    }).done(function(err, order){
+                      if(err){
+                          console.log('err: '+err);
+                      }
+                      else{
+                          console.log('order: '+ order);
+                      }
+                    });
+                }
+                else{
+                    console.log('Updating plan for the second time');
+                    Order.update({email: req.user.email},{
+                      plan: 'upgraded second time'
+                      }, function(err, order) {
+                      if (err) {
+                          return console.log(err);
+                      } else {
+                          console.log("Upgraded order plan:", order);
+                          res.send(order);
+                      }
+                    });
+                }
+          });
+                
 
           //res.send("Payment has been done!");
                 res.redirect('/');
@@ -120,7 +141,13 @@ module.exports = {
 
     'account-settings': function(req, res){
         //res.view('home/account-settings');
-        res.view({user: req.user});
+        Order.findOne({email: req.user.email}).done(function (err, userOrder){
+          console.log("userOrder: "+userOrder);
+          res.view({
+            user: req.user,
+            order: userOrder
+          });            
+        });
     },
 
     viewProfile: function(req, res){
@@ -171,7 +198,7 @@ module.exports = {
                                             return console.log(err);
                                         } else {
                                             console.log("Updated user profile:", user);
-                                            res.send(user);
+                                            res.redirect('/account');
                                         }
                                     });
                             }
