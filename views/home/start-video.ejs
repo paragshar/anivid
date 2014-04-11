@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+</head>
+<body>
+Create your vedio
+
+<div id='placehere'>
+	Left pannel
+	<img id='imgs' onclick='clickedit()' src = 'assets/characters/boy/standing.svg' height='150' width ='100' />
+  <img id='bg' onclick = 'clickedBG()' src = 'assets/backgrounds/bg-class-room.svg' height = '150' width = '100' />
+	<script> 
+  function clickedBG(){
+    $.post('background/findBackground', function (data, status){
+      console.log('background image clicked');
+      console.log('data.background.length: '+data.background.length);
+        for(var k=0; k<data.background.length; k++){
+            console.log('k: '+k);
+            var img = document.createElement("img");
+             img.src = 'assets/backgrounds/'+data.background[k].name+'.svg';
+             img.width = 100;
+             img.height = 150;
+             img.name = k;
+             img.onclick = function(){
+                console.log('img.name: '+this.name);
+                var iframe = window.videomaker;
+                iframe.anivid.addBackgroundToActiveScene(data.background[this.name].name);
+             };
+             console.log('img.src: '+img.src);
+             document.getElementById('placehere').appendChild(img);
+        }
+    }, 'json')
+  };
+	function clickedit() {
+    //var name = $('#name').val();
+    //var id = $('#pw').val();
+    var name = 'Deep';
+    var id = 123;
+    var obj = {
+        name: name,
+        id: id
+    };
+    var nameForImage;
+    var numberOfCharacters;
+    //posting on node server
+    $.post('character/boy', function (data, status) {
+    	numberOfCharacters = data.character.length;
+      console.log('numberOfCharacters: '+numberOfCharacters);
+      for(var i=0 ; i<numberOfCharacters; i++){
+        		console.log('i: '+i);
+        		var src;
+            var name;
+            console.log('data.character[i].speaking: '+data.character[i].speaking);
+        		
+            if(data.character[i].emotion != undefined){
+                if(data.character[i].speaking == 'true'){
+                  src = 'assets/characters/boy/'+data.character[i].action+'-'+data.character[i].emotion+'-'+'speaking-0.svg';
+                  name = data.character[i].action+'-'+data.character[i].emotion+'-'+'speaking';
+                }
+                else{
+                  src = 'assets/characters/boy/'+data.character[i].action+'-'+data.character[i].emotion+'-0.svg';
+                  name = data.character[i].action+'-'+data.character[i].emotion;
+                }
+            }
+            else{
+                if(data.character[i].speaking == 'true'){
+                  src = 'assets/characters/boy/'+data.character[i].action+'-'+'speaking-0.svg';
+                  name = data.character[i].action+'-'+'speaking';;
+                }
+                else{
+                  src = 'assets/characters/boy/'+data.character[i].action+'-0.svg';
+                  name = data.character[i].action;
+                }
+            }
+  	        var img = document.createElement("img");
+  	        img.src = src;
+  	    	  img.width = 100;
+  	    	  img.height = 150;
+            img.name = name;
+  	    	  img.onclick = function(){
+              console.log('Character is clicked with src: '+ src);
+              var iframe = window.videomaker;
+              var splits = this.name.split('-');
+              console.log('splits: '+splits);
+              if(splits.length == 3 ){
+                iframe.anivid.addCharacterToActiveScene({name:'boy', action:[splits[0]], speaking: true, nFrames:3, looking:'right'});
+              }
+              else if(splits.length == 2){
+                if(splits[1] == 'speaking'){
+                  iframe.anivid.addCharacterToActiveScene({name:'boy', action:[splits[0]], speaking: true, nFrames:3, looking:'right'});
+                }
+                else{
+                  iframe.anivid.addCharacterToActiveScene({name:'boy', action:[splits[0]], speaking: false, nFrames:3, looking:'right'});
+                }
+              }
+              else{
+                 iframe.anivid.addCharacterToActiveScene({name:'boy', action:[splits[0]], speaking: false, nFrames:3, looking:'right'});
+              }
+            };
+             console.log('img.src: '+img.src);
+  		       document.getElementById('placehere').appendChild(img);
+      }
+    }, 'json')
+	}
+	</script>
+</div>
+<div>
+	Right Pannel
+	<iframe src='/video' name="videomaker" width='700' height='500'></iframe>
+</div>
+<div>Footer</div>
+</body>
+</html>

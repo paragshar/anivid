@@ -1,0 +1,3 @@
+1. Give voice/narration abilities to characters
+2. Draw translate movement direction line
+3. Enter/Exit motions

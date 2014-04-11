@@ -209,6 +209,16 @@ module.exports = {
                 });
         });
     },
+
+    
+   'start-video': function (req, res){
+      res.view({
+        user: req.user
+      });
+   },
+   'video/app/index': function (req, res){
+      res.view();
+   },
     /**
      * Overrides for the settings in `config/controllers.js`
      * (specific to AuthController)

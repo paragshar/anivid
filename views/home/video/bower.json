@@ -1,0 +1,23 @@
+{
+  "name": "Anivid",
+  "version": "0.0.1",
+  "homepage": "http://www.anivid.com/",
+  "authors": [
+    "Parag Sharma"
+  ],
+  "description": "Anivid helps its users to create enriched, animated videos to explain their business, features, etc.",
+  "license": "MIT",
+  "dependencies": {
+      "jquery" : "*",
+      "fabric" : "1.4.0"
+  },
+    
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "main": "kinetic.js"
+}

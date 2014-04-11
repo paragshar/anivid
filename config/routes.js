@@ -102,9 +102,26 @@ module.exports.routes = {
     controller: 'auth',
     action: 'google/callback'
   },
+  '/start-video': {
+    controller: 'home',
+    action: 'start-video'
+  },
+  '/video': {
+    controller: 'home',
+    action: 'video/app/index'
+  }
+  ,
   'get /logout': {
     controller: 'auth',
     action: 'logout'
+  },
+  '/character/:name': {
+    controller: 'character',
+    action: 'findCharacter'
+  },
+  '/background/all': {
+    controller: 'background',
+    action: 'findBackground'
   }
 
   /*
