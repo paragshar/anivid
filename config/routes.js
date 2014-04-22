@@ -122,6 +122,14 @@ module.exports.routes = {
   '/background/all': {
     controller: 'background',
     action: 'findBackground'
+  },
+  '/convertAudio': {
+    controller: 'home',
+    action: 'convertAudio'
+  },
+  '/saveFile': {
+    controller: 'home',
+    action: 'saveFile'
   }
 
   /*

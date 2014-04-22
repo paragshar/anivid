@@ -18,6 +18,8 @@
 "use strict";
 var bcrypt = require('bcrypt');
 var paypal_api = require('paypal-rest-sdk');
+var fs = require('fs');
+var Buffer  = require('buffer').Buffer;
 
 paypal_api.configure({
           'host': 'api.sandbox.paypal.com',
@@ -209,15 +211,48 @@ module.exports = {
                 });
         });
     },
-
-    
+ 
    'start-video': function (req, res){
       res.view({
         user: req.user
       });
    },
+
    'video/app/index': function (req, res){
       res.view();
+   },
+
+   'convertAudio': function (req, res){      
+      console.log('convertAudio in router');
+      var body = '';
+      req.on('data', function (chunk) {        
+        //console.log(JSON.parse(chunk));
+        //body += chunk.toString('utf8');
+        //chunk = chunk.toString('utf8');
+        //console.log('GOT DATA!'+body);
+        //var data = new Buffer(chunk, 'base64').toString('binary');
+        console.log('GOT DATA!'+chunk);
+        fs.appendFile('assets/audio/'+ new Date().getDate()+'deepanshukumarsingh.wav', chunk, function (err) {
+          if(err) throw err;
+        });
+      });
+      req.on('end', function(){
+        console.log('end');
+        res.redirect('start-video');
+      });
+   },
+
+   'saveFile' :function(req, res) {
+    console.log('saving file');
+      fs.readFile(req.files.testFile.path, function (err, data) {
+          console.log('file read');
+          var newPath = 'upload/'+ req.files.testFile.name;
+          fs.writeFile(newPath, data, function (err) {
+              console.log('writing file');
+              if (err) res.view({err: err});
+              res.redirect('start-video');
+          });
+      });
    },
     /**
      * Overrides for the settings in `config/controllers.js`
