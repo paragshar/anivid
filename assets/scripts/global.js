@@ -75,8 +75,12 @@ anivid.addNarrationToActiveCharacter = function(options){
 
 anivid.prepare = function(){
 	var data = JSON.stringify(anivid.scenes);
-	$.post('video.php', {data:data}, function(response){
-		// console.log(response);
+	// $.post('video.php', {data:data}, function(response){
+	// 	// console.log(response);
+	// });
+    console.log('inside anivid.prepare');
+	$.post('/preview/create/?data='+data, function (response, status){
+		console.log(response);
 	});
 }
 
